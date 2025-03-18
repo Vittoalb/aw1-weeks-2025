@@ -18,4 +18,5 @@ function Question(id, text, email, userId, date) {
   this.date = dayjs(date);
 }
 
+//export delle funzioni singolarmente
 export { Question, Answer };

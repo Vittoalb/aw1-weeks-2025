@@ -1,6 +1,6 @@
 // import
 import express from 'express';
-import morgan from 'morgan';
+import morgan from 'morgan';    //logging module
 import { getQuestion } from './dao.mjs';
 
 // init

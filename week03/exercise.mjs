@@ -21,6 +21,7 @@ function Question(id, text, email, userId, date) {
         if (err) {
           reject(err);
         } else {
+          //crea array di oggetti Answer a partire dalle righe del db
           const answers = rows.map((ans) => new Answer(ans.id, ans.text, ans.email, ans.authorId, ans.date, ans.score));
           resolve(answers);
         }
