@@ -11,7 +11,7 @@ function Answers(props){
     </Row>
     <Row>
         <Col lg='10' className="mx-auto">
-            <AnswerTable answers={props.answers} />
+            <AnswerTable answers={props.answers} setAnswers={props.setAnswers}/>
         </Col>
     </Row>
     </>
@@ -34,7 +34,7 @@ function AnswerTable(props){
             </tr>
         </thead>
         <tbody>
-            {props.answers.map((ans) => <AnswerRow key={ans.id} answer={ans} />)}
+            {props.answers.map((ans) => <AnswerRow key={ans.id} answer={ans} setAnswers={props.setAnswers} />)}
         </tbody>
     </Table>
     </>
@@ -45,7 +45,7 @@ function AnswerRow(props){
     return(
         <tr>
             <AnswerInfo answer={props.answer}/>
-            <AnswerActions />
+            <AnswerActions setAnswers={props.setAnswers}/>
         </tr>
     )
 }
@@ -61,7 +61,7 @@ function AnswerInfo(props){
     )
 }
 
-function AnswerActions(){
+function AnswerActions(props){
     return(
         <>
             <td>

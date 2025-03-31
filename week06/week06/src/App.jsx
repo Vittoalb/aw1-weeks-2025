@@ -8,12 +8,16 @@ const fakeQuestion = new Question(1, "Is JavaScript better than Python=", "luigi
 fakeQuestion.init();
 const fakeAnswers = fakeQuestion.getAnswers();
 
+
+// npm i bootstrap react-bootstrap dayjs
 function App() {
+  const [question, setQuestion] = useState(fakeQuestion);
+  const [answers, setAnswers] = useState(fakeAnswers);
   return (
     <>
-      <NavHeader numQuestion={fakeQuestion.id} />
-      <QuestionDescription question ={fakeQuestion} />
-      <Answers answers={fakeAnswers} />
+      <NavHeader numQuestion={question.id} />
+      <QuestionDescription question ={question} />
+      <Answers answers={answers} setAnswers={setAnswers} />
     </>
   )
 }
