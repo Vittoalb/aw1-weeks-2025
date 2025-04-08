@@ -30,7 +30,6 @@ function AnswerForm(props) {
     return initialState;
   }
 
-  //evitiamo il pending per il momento
   const [state, formAction] = useActionState(handleSubmit, initialState);
 
   return(
