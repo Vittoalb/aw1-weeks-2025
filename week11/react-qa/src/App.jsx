@@ -11,16 +11,22 @@ import { AnswerForm, EditAnswerForm } from "./components/AnswerForm";
 import NotFound from "./components/NotFound";
 import API from "./API/API.mjs";
 
+//REACT
 function App() {
   const [questions, setQuestions] = useState([]);
 
+  // nello useEffect chiamo le funzioni di API.mjs che sono 
+  // collegate al server (index.mjs) che chiama il database (dao.mjs)
+
+  // la callback non può essere asincrona, ma può chiamare una funzione asincrona
+  // quindi la dichiaro e la richiamo subito dopo averla definita
   useEffect(() => {
     const getQuestions = async () => {
       const questions = await API.getQuestions();
       setQuestions(questions);
     }
     getQuestions();
-  }, []);
+  }, []); //solo la prima volta che il componente viene montato
 
   const addAnswer = (answer) => {
     setAnswers(oldAnswers => {

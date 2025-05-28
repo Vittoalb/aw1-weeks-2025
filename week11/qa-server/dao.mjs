@@ -11,6 +11,9 @@ const db = new sqlite.Database('questions.sqlite', (err) => {
 
 /** QUESTIONS **/
 // get all the questions
+
+// ritorna una Promise e viene chiamata da index.mjs
+// per accedere al database
 export const listQuestions = () => {
   return new Promise((resolve, reject) => {
     const sql = 'SELECT question.*, user.email FROM question JOIN user ON question.authorId = user.id';

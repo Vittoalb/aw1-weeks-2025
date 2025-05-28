@@ -5,7 +5,9 @@ const SERVER_URL = "http://localhost:3001";
 // tutte le domande
 // GET /api/questions
 const getQuestions = async () => {
-  const response = await fetch(SERVER_URL + "/api/questions");
+  const response = await fetch(SERVER_URL + "/api/questions");  
+  // fetch è una funzione asincrona che ritorna una Promise che serve per gestire le risposte HTTP e ritornare i dati in formato JSON
+  // "response" è un oggetto Response che contiene lo stato della richiesta e i dati
   if(response.ok) {
     const questionsJson = await response.json();
     return questionsJson.map(q => new Question(q.id, q.text, q.email, q.userId, q.date));

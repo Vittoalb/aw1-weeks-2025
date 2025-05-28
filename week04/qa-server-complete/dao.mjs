@@ -1,6 +1,10 @@
 /* Data Access Object (DAO) module for accessing Q&A */
 /* Initial version taken from exercise 4 (week 03) */
 
+// accedono al database e ritornano una promise
+// che viene risolta quando il database ha finito di eseguire la query
+// e viene rifiutata in caso di errore
+
 import sqlite from 'sqlite3';
 import { Question, Answer } from './QAModels.mjs';
 

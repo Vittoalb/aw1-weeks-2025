@@ -52,6 +52,8 @@ function App() {
     });
   }
 
+  // questa qua dentro è JSX, sintassi alternativa più simile a html rispetto a react.createElement
+  // i componenti saranno espansi durante il rendering -> no side effects (pure functions)
   return (
     <>
       <NavHeader questionNum={question.id} />

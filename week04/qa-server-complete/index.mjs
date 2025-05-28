@@ -13,11 +13,14 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 /* ROUTES */
+// chiamate dalle API, gestiscono sincronamente le richieste e le risposte
+// chiamando al loro interno le funzioni definite in dao.mjs
+// e gestendo eventuali errori e validazioni
 
 // GET /api/questions
 app.get('/api/questions', (req, res) => {
   listQuestions()
-  .then(questions => res.json(questions))
+  .then(questions => res.json(questions))   //gestione sincrona (senza await)
   .catch(() => res.status(500).end());
 });
 

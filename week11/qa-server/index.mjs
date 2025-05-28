@@ -23,8 +23,10 @@ app.use(cors(corsOptions));
 /* ROUTES */
 
 // GET /api/questions
+
+// viene chiamata da API.getQuestions() in React
 app.get('/api/questions', (req, res) => {
-  listQuestions()
+  listQuestions()   // chiama la funzione listQuestions() che ritorna una Promise
   .then(questions => res.json(questions))
   .catch(() => res.status(500).end());
 });

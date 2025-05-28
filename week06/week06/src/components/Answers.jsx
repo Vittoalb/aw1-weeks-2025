@@ -3,18 +3,18 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function Answers(props){
     return (
-    <>
-    <Row>
-        <Col as='h2'>
-            Answers:
-        </Col>
-    </Row>
-    <Row>
-        <Col lg='10' className="mx-auto">
-            <AnswerTable answers={props.answers} setAnswers={props.setAnswers}/>
-        </Col>
-    </Row>
-    </>
+        <>
+        <Row>
+            <Col as='h2'>
+                Answers:
+            </Col>
+        </Row>
+        <Row>
+            <Col lg='10' className="mx-auto">
+                <AnswerTable answers={props.answers} setAnswers={props.setAnswers}/>
+            </Col>
+        </Row>
+        </>
     )
 }
 

@@ -71,6 +71,11 @@ function App() {
 
     */}
 
+
+
+  // :questionId è il parametro che viene passato e che può 
+  // essere recuperato con useParams() dall'altra parte
+
   return (
     <Routes>
       <Route element={ <DefaultLayout /> } >
